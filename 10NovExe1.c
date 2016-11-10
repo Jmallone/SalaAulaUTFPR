@@ -2,6 +2,7 @@
 #include <locale.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define T 3
 #define B setbuf(stdin, NULL);
 
@@ -21,13 +22,13 @@ void primeiraLetra(s_nip *P){
 	printf("\n Digite uma Letra: ");
 	scanf("%c", &letra );
 
-
+	system("cls || clear");
 	int i =0;
 	printf("---- Pessoas Encontradas ----\n");
 	for(i = 0; i < T ; i++){
 
 
-		if(letra == P[i].nome[0]){
+		if(letra == P[i].nome[0] || toupper(letra) == P[i].nome[0] || isupper(letra) == P[i].nome[0] ){
 
 			printf("Nome: %s \n", P[i].nome);
 
@@ -81,6 +82,7 @@ void inserirP(s_nip  *P){
 }
 
 int main(){
+	system("cls || clear");
     int continuar = 1;
     s_nip Pessoas[T]; //<-7
 
@@ -109,7 +111,7 @@ int main(){
                 primeiraLetra(Pessoas);
                 break;
 
-            case 0;
+            case 0:
                 break;
 
             default:
