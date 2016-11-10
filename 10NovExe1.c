@@ -45,7 +45,7 @@ void maisVelha(s_nip *P){
 	int i = 0;
 	for(i = 0; i < T ; i++){
 
-		
+
 		if(y <= P[i].idade){
 
 			y = P[i].idade;
@@ -81,11 +81,45 @@ void inserirP(s_nip  *P){
 }
 
 int main(){
-	s_nip Pessoas[T]; //<-7
-	inserirP(Pessoas);
-	maisVelha(Pessoas);
-	primeiraLetra(Pessoas);
-	
+    int continuar = 1;
+    s_nip Pessoas[T]; //<-7
+
+    do {
+        printf("\n --- Escolha uma opcao ---\n\n");
+        printf("1. Cadastrar Pessoas\n");
+        printf("2. Saber qual pessoa é a mais velha\n");
+        printf("3. Pessoas com as Iniciais Iguais \n");
+        printf("0. Sair\n");
+
+
+        scanf("%d", &continuar);
+        system("cls || clear");
+
+        switch(continuar)
+        {
+            case 1:
+                inserirP(Pessoas);
+                break;
+
+            case 2:
+                maisVelha(Pessoas);
+                break;
+
+            case 3:
+                primeiraLetra(Pessoas);
+                break;
+
+            case 0;
+                break;
+
+            default:
+                printf("Digite uma opcao valida\n");
+        }
+
+
+    }while(continuar);
+
+
 	return 0;
 
 }
