@@ -59,7 +59,6 @@ void aluno_libera(Aluno* aluno){
 
 float aluno_media(Aluno* aluno){
 	float media = 0;
-	
 	int i = 0;
 	for(i = 0; i<aluno->qtdeNotas; i++){
 
